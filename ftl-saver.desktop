@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=FTL Saver
+Comment=Program for saving progress in the game Faster Than Light
+Exec=ftl-saver
+MimeType=application/x-ms-dos-executable;application/x-msi;application/x-ms-shortcut;
+Icon=applications-games-symbolic.symbolic
+Categories=Utility;
