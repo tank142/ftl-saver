@@ -4,12 +4,14 @@
 #include <QTranslator>
 #include <QLibraryInfo>
 #include <QStandardPaths>
+#include <iostream>
+using namespace std;
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
 	QTranslator translator;
-	if(translator.load("ftl-saver_ru_RU",QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation).at(2))){
-		translator.load("ftl-saver_en_US",QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation).at(2));
+	if(!translator.load("ftl-saver_" + QLocale::system().name(),QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation).at(2))){
+		translator.load("ftl-saver_en_US",QStandardPaths::standardLocations(QStandardPaths::AppLocalDataLocation).at(2));
 	}
 	a.installTranslator(&translator);
 	MainWindow w;

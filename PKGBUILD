@@ -7,19 +7,24 @@ url="https://github.com/tank142/ftl-saver"
 license=('GPL3')
 depends=('qt5-base' 'tar' 'lz4')
 makedepends=('git')
-source=("${pkgname}::git+https://github.com/tank142/ftl-saver.git")
+optdepends=
+source=('wine-gui::git+https://github.com/tank142/wine-gui.git')
 sha256sums=('SKIP')
 
+pkgver() {
+  cd "${pkgname%-*}"
+  git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g'
+}
+
 build() {
-  mkdir -p "${pkgname}/build"
-  cd "${pkgname}/build"
+  cd "${pkgname%-*}"
   qmake-qt5 PREFIX=/usr \
     QMAKE_CFLAGS_RELEASE="${CFLAGS}" \
     QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" \
-    QMAKE_LFLAGS_RELEASE="${LDFLAGS}" ..
+    QMAKE_LFLAGS_RELEASE="${LDFLAGS}"
   make
 }
 
 package() {
-  make -C "${pkgname}/build" INSTALL_ROOT="$pkgdir/" install
+  make -C "${pkgname%-*}" INSTALL_ROOT="$pkgdir/" install
 }
