@@ -31,7 +31,7 @@ unix:!macx {
         PREFIX = /usr
     }
     target.path =  $$quote($$PREFIX/bin)
-    desktop.files = icons/ftl-saver.desktop
+    desktop.files = ftl-saver.desktop
     desktop.path =  $$quote($$PREFIX/share/applications)
     ftl-saver_en_US.files = ftl-saver_en_US.qm
     ftl-saver_en_US.path =  $$quote($$PREFIX/share/ftl-saver)
