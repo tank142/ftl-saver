@@ -25,13 +25,8 @@ qnx: target.path = /tmp/$${TARGET}/bin
 #else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-DISTFILES +=
-
-RESOURCES += \
-    icons/icons.qrc
-DEPLOYMENTFOLDERS = icons
 unix:!macx {
-    TARGET = wine-gui
+    TARGET = ftl-saver
     isEmpty(PREFIX) {
         PREFIX = /usr
     }
