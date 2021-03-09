@@ -34,8 +34,8 @@ unix:!macx {
     desktop.files = icons/ftl-saver.desktop
     desktop.path =  $$quote($$PREFIX/share/applications)
     ftl-saver_en_US.files = ftl-saver_en_US.qm
-    ftl-saver_en_US.path =  $$quote($$PREFIX/share/ftl-saver/ftl-saver_en_US.qm)
+    ftl-saver_en_US.path =  $$quote($$PREFIX/share/ftl-saver)
     ftl-saver_ru_RU.files = ftl-saver_ru_RU.qm
-    ftl-saver_ru_RU.path =  $$quote($$PREFIX/share/ftl-saver/ftl-saver_ru_RU.qm)
+    ftl-saver_ru_RU.path =  $$quote($$PREFIX/share/ftl-saver)
     INSTALLS += target desktop ftl-saver_en_US ftl-saver_ru_RU
 }
